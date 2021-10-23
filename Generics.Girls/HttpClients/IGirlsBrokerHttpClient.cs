@@ -2,8 +2,8 @@
 
 namespace Generics.Girls.HttpClients
 {
-    interface IGirlsBrokerHttpClient
+    public interface IGirlsBrokerHttpClient
     {
-        public Task<bool> PostMiddleModelAsync();
+        public Task<bool> PostAsync(string json);
     }
 }

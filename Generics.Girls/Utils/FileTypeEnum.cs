@@ -2,8 +2,7 @@
 {
     public enum FileType
     {
-        TXT = 0,
-        XML = 1,
-        CSV = 2
+        XML = 0,
+        CSV = 1
     }
 }

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "CsvHelper/27.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -1457,6 +1466,28 @@
     }
   },
   "libraries": {
+    "CsvHelper/27.1.1": {
+      "sha512": "lo5yypClBORR2XiWPRxQApaA4C2R4GVCIPVRt9HfaLxLmVQtg/KZiOYsd4luLgyOxkUatF9R0QdFQYk7Y2l0cw==",
+      "type": "package",
+      "path": "csvhelper/27.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.27.1.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "type": "package",
@@ -5302,26 +5333,23 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CsvHelper >= 27.1.1",
       "Microsoft.AspNet.WebApi.Core >= 5.2.7",
       "System.Xml.ReaderWriter >= 4.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pablo\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Pablo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
       "projectName": "Generics.Girls",
-      "projectPath": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
+      "projectPath": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
       "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\obj\\",
+      "outputPath": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -5330,7 +5358,7 @@
         "net5.0"
       ],
       "sources": {
-        "http://nexusdev.pmenos.com.br:8081/repository/nuget01/": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5349,6 +5377,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[27.1.1, )"
+          },
           "Microsoft.AspNet.WebApi.Core": {
             "target": "Package",
             "version": "[5.2.7, )"
@@ -5376,7 +5408,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -15,12 +13,14 @@ namespace Generics.Girls.HttpClients.Impl
             this.httpClient = httpClient;
         }
 
-        public async Task<bool> PostMiddleModelAsync()
+        public async Task<bool> PostAsync(string json)
         {
             var uri = "";
             try
             {
-                var response = await httpClient.PostAsync(uri, null);
+                var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json"); ;
+                var response = await httpClient.PostAsync(uri, content);
+                response.EnsureSuccessStatusCode();
             }
             catch (Exception)
             {

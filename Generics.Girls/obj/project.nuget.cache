@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yhNyqe+/5+AKyg5qCucFp2Xp8QeJbrCb2Wq9+CbkRe4S0so9hqQMWhqP0VhhuwN3UcyoDb13poGir3LVe2MCcQ==",
+  "dgSpecHash": "yBG0fesU27gNeYltdvYfMZ0fxyehETfQSufAyUHnR6gs7QMhuz3tNnKNDzTpiPBSoJ273p3nXZVL6Hc2naoH8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
+  "projectFilePath": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pablo\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

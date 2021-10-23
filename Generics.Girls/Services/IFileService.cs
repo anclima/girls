@@ -6,6 +6,6 @@ namespace Generics.Girls.Services
 {
     public interface IFileService
     {
-        public Task<string> ProcessFileAsync(IFormFile file);
+        public string ProcessFile(IFormFile file);
     }
 }

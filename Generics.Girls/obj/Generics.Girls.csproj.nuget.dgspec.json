@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj": {}
+    "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj": {
+    "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
         "projectName": "Generics.Girls",
-        "projectPath": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
+        "projectPath": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\Generics.Girls.csproj",
         "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pablo\\Desktop\\Girls\\girls\\Generics.Girls\\obj\\",
+        "outputPath": "C:\\Users\\Pablo\\Documents\\Projects\\Girls\\girls\\Generics.Girls\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -24,7 +21,7 @@
           "net5.0"
         ],
         "sources": {
-          "http://nexusdev.pmenos.com.br:8081/repository/nuget01/": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[27.1.1, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.7, )"
@@ -70,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

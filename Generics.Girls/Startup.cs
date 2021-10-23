@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Generics.Girls.Utils;
 using Generics.Girls.HttpClients;
+using Generics.Girls.HttpClients.Impl;
 using Generics.Girls.Services;
 using Generics.Girls.Services.Impl;
 
@@ -26,30 +27,25 @@ namespace Generics.Girls
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
 
             services
-                .AddTransient<XmlReaderService>()
-                .AddTransient<CsvReaderService>();
+                .AddTransient<XmlReader>()
+                .AddTransient<CsvReader>();
+
+            services
+                .AddSingleton<IGirlsBrokerHttpClient, GirlsBrokerHttpClient>();
 
             services
                 .AddSingleton<IFileService, FileService>()
-                .AddTransient<Func<FileType, IFileReaderService>>(serviceProvider => key =>
-                    {
-                        switch (key)
-                        {
-                            case FileType.XML:
-                                return serviceProvider.GetService<XmlReaderService>();
-                            case FileType.CSV:
-                                return serviceProvider.GetService<CsvReaderService>();
-                            default:
-                                throw new KeyNotFoundException();
-                        }
-                    }
-                );
+                .AddTransient((Func<IServiceProvider, Func<FileType, IFileReader>>)(serviceProvider => key =>
+                {
+                    var b =  GetFileReaderInstance(serviceProvider, key);
+                    return b;
+                }));
 
-            services.AddHttpClient<IGirlsBrokerHttpClient>();
+            services.AddHttpClient<GirlsBrokerHttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,8 +56,10 @@ namespace Generics.Girls
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(
+                options => options.WithOrigins("http://example.com").AllowAnyMethod()
+            );
             app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();
@@ -70,6 +68,16 @@ namespace Generics.Girls
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static IFileReader GetFileReaderInstance(IServiceProvider serviceProvider, FileType key)
+        {
+            return key switch
+            {
+                FileType.XML => serviceProvider.GetService<XmlReader>(),
+                FileType.CSV => serviceProvider.GetService<CsvReader>(),
+                _ => throw new KeyNotFoundException(),
+            };
         }
     }
 }

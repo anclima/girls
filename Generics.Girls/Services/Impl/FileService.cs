@@ -11,23 +11,23 @@ namespace Generics.Girls.Services.Impl
 {
     public class FileService : IFileService
     {
-        private readonly ILogger<IFileReaderService> logger;
-        private Func<FileType, IFileReaderService> fileReaderServiceDelegate;
+        private readonly ILogger<IFileReader> logger;
+        private readonly Func<FileType, IFileReader> fileReaderServiceDelegate;
 
-        public FileService(ILogger<IFileReaderService> logger, Func<FileType, IFileReaderService> fileReaderServiceDelegate)
+        public FileService(ILogger<IFileReader> logger, Func<FileType, IFileReader> fileReaderServiceDelegate)
         {
             this.logger = logger;
             this.fileReaderServiceDelegate = fileReaderServiceDelegate;
             
         }
 
-        public async Task<string> ProcessFileAsync(IFormFile file)
+        public string ProcessFile(IFormFile file)
         {
-            IFileReaderService fileReaderService = fileReaderServiceDelegate(FileType.CSV);
+            IFileReader fileReaderService = fileReaderServiceDelegate(FileType.CSV);
 
             try
             {
-                return await fileReaderService.ReadFileAsync(file);
+                return fileReaderService.ReadFile(file);
             }
             catch(Exception error)
             {
